@@ -1,27 +1,18 @@
-import Link from 'next/link'
+import Header from './Header'
 
 export default function Layout({ children }) {
   return (
-    <div className="layout">
-      <header>
-        <Link href="/">
-          <a>
-            <h1>
-              <span>Just Add</span>
-              <span>Marmite</span>
-            </h1>
-            <h2>Spread The Joy</h2>
-          </a>
-        </Link>
-      </header>
+    <>
+      <div className="layout">
+        <Header />
 
-      <div className="page-content">
-        { children }
+        <div className="page-content">
+          {children}
+        </div>
       </div>
-
       <footer>
-        <p>Copyright 2021 Just Add Marmite :)</p>
+        <p>© 2022 REMI HIGUCHI</p>
       </footer>
-    </div>
+    </>
   )
 }

@@ -1,56 +1,58 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://use.typekit.net/ebc0fbo.css");
+@import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
 
-body {
-  background: #F4E640;
-  margin: 0;
-  font-family: 'Roboto';
-  font-size: 1.5em;  
+*{
+  margin: 0 auto;
+  padding: 0;
 }
-.layout {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+
+@font-face {
+  font-family: "newake", "Noto Sans JP";
+  src: url('/assets/newake.otf') format('otf'),
+  url('/assets/newake.ttf') format('truetype');
 }
-header {
-  text-align: center;
-  margin: 60px 0;
+
+body{
+  font-family: "futura-pt";
+  border-top: 10px solid #1efad9;
 }
-header a {
+
+header{
+  margin: 40px 0;
+}
+
+header a{
   text-decoration: none;
-  color: black;
-  text-transform: uppercase;
-  display: inline-block;
+  color: #c31efa;
 }
-header h1, header h2 {
+header .menu{
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+header .menu div{
   margin: 0;
 }
-header span {
-  display: block;
-  line-height: 1em;
+header .links a{
+  display: inline-flex;
+  padding: 0 10px;
 }
-header span:first-child {
-  font-size: 1em;
-  font-weight: 400;
+h1{
+  margin: 30px 0 10px;
 }
-header span:last-child {
-  font-size: 1.5em;
-  font-weight: 800;
-}
-header h2 {
-  font-size: 1.2em;
-  font-weight: 400;
-}
-footer {
-  background: #111;
-  color: #bbb;
-  padding: 40px;
-  text-align: center;
-  margin-top: auto
-}
-.page-content {
-  max-width: 1200px;
-  margin: 20px auto 80px;
+.layout{
+  max-width: 1100px;
   padding: 0 20px;
-  width: 100%;
-  box-sizing: border-box;
+}
+p{
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+footer{
+  margin-top: 500px;
+  background-color: #999;
+  color: #FFF;
+  text-align: center;
 }
