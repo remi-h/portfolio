@@ -7,13 +7,13 @@
 }
 
 @font-face {
-  font-family: "newake", "Noto Sans JP";
+  font-family: "newake";
   src: url('/assets/newake.otf') format('otf'),
   url('/assets/newake.ttf') format('truetype');
 }
 
 body{
-  font-family: "futura-pt";
+  font-family: "futura-pt", "Noto Sans JP";
   border-top: 10px solid #1efad9;
 }
 
