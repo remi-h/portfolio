@@ -7,7 +7,7 @@ export default function Header() {
                 <div className='logo'>
                     <Link href="/">
                         <a>
-                            <img src="toplogo.svg" width="80" />
+                            <img src="/logo/toplogo.svg" width="80" />
                         </a>
                     </Link>
                 </div>
@@ -28,6 +28,9 @@ export default function Header() {
                 .remi{
                     font-family: "newake";
                     font-size: 60px;
+                }
+                p{
+                    font-size: 1.2rem;
                 }
             `}</style>
         </header>

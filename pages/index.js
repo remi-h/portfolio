@@ -1,5 +1,6 @@
 import { createClient } from 'contentful'
 import Introduction from "../components/Introduction"
+import Link from 'next/link'
 
 export async function getStaticProps() {
   const client = createClient({
@@ -13,15 +14,23 @@ export async function getStaticProps() {
   }
 }
 
-export default function home({introEdit}) {
+export default function home({ introEdit }) {
   return (
     <div className="wrapper">
-      <div>
-        <h1>Remi Higuchi</h1>
+      <div className='intro'>
+        <h1>Hi! I'm Remi Higuchi.</h1>
         {introEdit.map(intro => (
           <Introduction key={intro.sys.id} intro={intro} />
         ))}
+        <Link href="/profile">
+          <a className='button'>
+            <p>PROFILE →</p>
+          </a>
+        </Link>
       </div>
+      <section>
+        <h2>Take a look at my work</h2>
+      </section>
     </div>
   )
 }
