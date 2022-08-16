@@ -1,7 +1,8 @@
 import { createClient } from 'contentful'
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { BLOCKS, INLINES } from "@contentful/rich-text-types";
-import Skeleton from '../../components/Skeleton';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import { BLOCKS, INLINES } from "@contentful/rich-text-types"
+import Skeleton from '../../components/Skeleton'
+import Image from 'next/image'
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -64,11 +65,16 @@ const renderOptions = {
 
 export default function log({ log }) {
   if (!log) return <Skeleton />
-
-  const { title } = log.fields
+  const { title, date, icon, text } = log.fields
+  console.log('https:' + icon.fields.file.url)
   return (
     <div className="log-content">
       <h1>{title}</h1>
+      <p>{date}</p>
+      <Image src={'https:' + icon.fields.file.url} width={100} height={100} objectFit="contain" />
+      <p>
+        {documentToReactComponents(text, renderOptions)}
+      </p>
     </div>
   )
 }

@@ -49,26 +49,47 @@ header .links a {
 h1 {
   margin: 30px 0 10px;
 }
-h3{
+
+h3 {
   font-size: 1.3rem;
   font-weight: 400;
 }
-ul, li{
+
+ul, li {
   font-size: 1.1rem;
   margin: 5px 10px;
 }
-ul, li > p{
+
+ul, li>p {
   font-size: 1.1rem;
 }
-hr{
+
+hr {
   margin: 25px 0;
 }
-.intro {
-  margin: 0;
+
+a {
+  color: #888;
 }
+
+a:hover {
+  color: #222;
+  transition: .5s;
+}
+
+
+.intro {
+  margin: 28% 0;
+  font-size: 3rem;
+}
+
 p {
   font-size: 1.4rem;
   font-weight: 500;
+}
+
+.log-content a {
+  color: #c31efa;
 }
 
 .layout {
@@ -76,23 +97,39 @@ p {
   padding: 0 20px;
 }
 
+section+section {
+  margin: 20px 0;
+}
+
 /* BUTTON */
 a.button {
-  color: #c31efa;
   position: relative;
   bottom: 10px;
 }
 
 a.button::after {
   content: '';
-  width: 90px;
   height: 2px;
   position: relative;
-  right: 88px;
   top: 10px;
   display: inline-block;
-  background-color: #c31efa;
+  background-color: #888;
 }
+a.button:hover::after {
+  background-color: #222;
+  transition: .5s;
+}
+
+a.button-a::after {
+  width: 90px;
+  right: 88px;
+}
+
+a.button-b::after {
+  width: 128px;
+  right: 124px;
+}
+
 
 a.button p {
   margin: 15px 0;
@@ -103,35 +140,104 @@ a.button p {
 
 
 /* RESUME */
-.profile-box{
+.profile-box {
   background: #f3f3f3;
   padding: 30px;
   margin: 20px 0;
   border-radius: 15px;
 }
-.resume-box{
+
+.resume-box {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
   margin: 14px 0;
 }
-.resume-box div.year{
+
+.resume-box div.year {
   width: 200px;
   margin: 0;
 }
-.resume-box div.org{
+
+.resume-box div.org {
   margin: 0;
 }
-.resume-box div.year p{
+
+.resume-box div.year p {
   font-size: 0.9rem;
   display: inline-block;
 }
-.resume-box div.year p.area{
+
+.resume-box div.year p.area {
   border: 1px solid #000;
   padding: 2px 10px;
   margin: 5px 0;
 }
 
+/* FEATURED */
+.featured-list {
+  margin: 20px 0;
+}
+
+.log-list .featured {
+  margin: 15px 0;
+  max-width: 350px;
+}
+
+.featured p {
+  font-size: 1.8rem;
+}
+
+/* LOG */
+.log-list {
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-around; */
+  align-content: space-around;
+}
+
+.log-list a {
+  text-decoration: none;
+}
+
+.log-card {
+  margin: 5px;
+  padding: 15px;
+  background-color: #f3f3f3;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  max-width: 350px;
+}
+
+.log-card p.date {
+  font-size: 1rem;
+}
+
+.log-card .title {
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+}
+
+.log-card-text {
+  padding: 0 10px;
+}
+
+@media only screen and (max-width: 430px) {
+  .log-card {
+    flex-wrap: wrap;
+  }
+
+  .log-card div {
+    margin: 0;
+  }
+
+  .log-card img {
+    width: 60px !important;
+  }
+}
+
+/* FOOTER */
 
 footer {
   margin-top: 100px;
@@ -140,6 +246,7 @@ footer {
   text-align: center;
   padding: 40px;
 }
-footer p{
+
+footer p {
   font-size: 0.8rem;
 }

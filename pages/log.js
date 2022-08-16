@@ -8,7 +8,7 @@ export async function getStaticProps() {
         accessToken: process.env.CONTENTFUL_ACCESS_KEY
     })
 
-    const res = await client.getEntries({ content_type: 'log', order: 'fields.date' })
+    const res = await client.getEntries({ content_type: 'log', order: '-fields.date' })
     return {
         props: { log: res.items },
         revalidate: 10
@@ -18,6 +18,7 @@ export async function getStaticProps() {
 export default function Log({ log }) {
     return (
         <>
+            <h1>Remi's LOG</h1>
             <div className="log-list">
                 {log.map(log => (
                     <LogList key={log.sys.id} log={log} />
