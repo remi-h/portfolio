@@ -1,7 +1,74 @@
-export default function RecipeDetails() {
+import { createClient } from 'contentful'
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { BLOCKS, INLINES } from "@contentful/rich-text-types";
+import Skeleton from '../../components/Skeleton';
+
+const client = createClient({
+  space: process.env.CONTENTFUL_SPACE_ID,
+  accessToken: process.env.CONTENTFUL_ACCESS_KEY
+})
+
+export const getStaticPaths = async () => {
+  const res = await client.getEntries({
+    content_type: 'log',
+    "fields.slug": "the-power-of-the-contentful-rich-text-field",
+  })
+  const paths = res.items.map(item => {
+    return {
+      params: { slug: item.fields.slug }
+    }
+  })
+  return {
+    paths,
+    fallback: true
+  }
+}
+
+export async function getStaticProps({ params }) {
+  const { items } = await client.getEntries({
+    content_type: 'log',
+    'fields.slug': params.slug
+  })
+  if (!items.length) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false
+      }
+    }
+  }
+  return {
+    props: { live: items[0] },
+    revalidate: 10
+  }
+}
+
+const renderOptions = {
+  renderText: text => {
+    return text.split('\n').reduce((children, textSegment, index) => {
+      return [...children, index > 0 && <br key={index} />, textSegment];
+    }, []);
+  },
+  renderNode: {
+    [BLOCKS.EMBEDDED_ASSET]: (node, children) => {
+      // works
+      return (
+        <img
+          src={`https://${node.data.target.fields.file.url}`}
+          className="richtextimg"
+        />
+      );
+    },
+  },
+};
+
+export default function log({ log }) {
+  if (!log) return <Skeleton />
+
+  const { title } = log.fields
   return (
-    <div>
-      Recipe Details
+    <div className="log-content">
+      <h1>{title}</h1>
     </div>
   )
 }
