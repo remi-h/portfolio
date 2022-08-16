@@ -8,7 +8,7 @@ export default function LogList({ log }) {
         <div className="log-card">
             <p className="date">{date}</p>
             <span className="actions">
-                <Link href={'log' + slug}>
+                <Link href={'log/' + slug}>
                     <a>
                         <p>{title}</p>
                     </a>

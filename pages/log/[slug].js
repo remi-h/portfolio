@@ -38,7 +38,7 @@ export async function getStaticProps({ params }) {
     }
   }
   return {
-    props: { live: items[0] },
+    props: { log: items[0] },
     revalidate: 10
   }
 }

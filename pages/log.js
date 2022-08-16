@@ -1,4 +1,5 @@
 import { createClient } from 'contentful'
+import LogList from '../components/LogList'
 
 export async function getStaticProps() {
 
@@ -14,7 +15,7 @@ export async function getStaticProps() {
     }
 }
 
-export default function LogList({ log }) {
+export default function Log({ log }) {
     return (
         <>
             <div className="log-list">
