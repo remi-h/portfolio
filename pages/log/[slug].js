@@ -54,27 +54,36 @@ const renderOptions = {
     [BLOCKS.EMBEDDED_ASSET]: (node, children) => {
       // works
       return (
-        <img
+        <Image
           src={`https://${node.data.target.fields.file.url}`}
           className="richtextimg"
+          width={node.data.target.fields.file.details.image.width}
+          height={node.data.target.fields.file.details.image.height}
+          objectFit="contain"
         />
       );
     },
   },
 };
 
-export default function log({ log }) {
+export default function log({ log, tagList }) {
   if (!log) return <Skeleton />
-  const { title, date, icon, text } = log.fields
-  console.log('https:' + icon.fields.file.url)
+  const { title, date, icon, tag, text } = log.fields
   return (
     <div className="log-content">
       <h1>{title}</h1>
-      <p>{date}</p>
-      <Image src={'https:' + icon.fields.file.url} width={100} height={100} objectFit="contain" />
-      <p>
+      <div className='log-details'>
+        <Image src={'https:' + icon.fields.file.url} width={100} height={100} objectFit="contain" />
+        <div>
+          <p className='date'>{date}</p>
+          <div className='tag'>
+            {documentToReactComponents(tag, renderOptions)}
+          </div>
+        </div>
+      </div>
+      <div className='richtext'>
         {documentToReactComponents(text, renderOptions)}
-      </p>
+      </div>
     </div>
   )
 }

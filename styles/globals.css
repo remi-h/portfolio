@@ -115,6 +115,7 @@ a.button::after {
   display: inline-block;
   background-color: #888;
 }
+
 a.button:hover::after {
   background-color: #222;
   transition: .5s;
@@ -235,6 +236,42 @@ a.button p {
   .log-card img {
     width: 60px !important;
   }
+}
+
+/* LOG-CONT */
+.log-details {
+  display: flex;
+  align-items: center;
+}
+
+.log-details div {
+  margin: 0;
+}
+
+.log-details .date {
+  margin: 0 5px;
+  font-size: 1.1rem;
+}
+
+.log-content .richtext p {
+  margin: 15px 0;
+  font-family: "Noto Sans JP";
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+
+.log-content .tag ul, .log-content .tag ul li {
+  display: flex;
+  flex-wrap: wrap;
+  color: #888;
+  margin: 2px;
+}
+
+.log-content .tag li {
+  border: 1px solid #888;
+  border-radius: 5px;
+  padding: 2px 9px;
+  margin: 5px;
 }
 
 /* FOOTER */
