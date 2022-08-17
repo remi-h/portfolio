@@ -55,7 +55,7 @@ const renderOptions = {
       // works
       return (
         <Image
-          src={`https://${node.data.target.fields.file.url}`}
+          src={'https:' + node.data.target.fields.file.url}
           className="richtextimg"
           width={node.data.target.fields.file.details.image.width}
           height={node.data.target.fields.file.details.image.height}
