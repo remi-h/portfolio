@@ -8,7 +8,7 @@ export default function LogList({ log }) {
     return (
         <div className="log-card">
             <div>
-                <Image src={'https:' + icon.fields.file.url} width={120} height={120} objectFit="contain"/>
+                <Image src={'https:' + icon.fields.file.url} width={100} height={60} objectFit="contain"/>
             </div>
             <div className='log-card-text'>
                 <p className="date">{date}</p>

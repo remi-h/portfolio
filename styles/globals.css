@@ -80,7 +80,7 @@ a:hover {
 
 .intro {
   margin: 28% 0;
-  font-size: 3rem;
+  font-size: 3.2rem;
 }
 
 p {
@@ -182,7 +182,7 @@ a.button p {
 
 .log-list .featured {
   margin: 15px 0;
-  max-width: 350px;
+  max-width: 30%;
 }
 
 .featured p {
@@ -193,8 +193,8 @@ a.button p {
 .log-list {
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: space-around; */
-  align-content: space-around;
+  justify-content: space-around;
+  align-content: space-between;
 }
 
 .log-list a {
@@ -208,7 +208,7 @@ a.button p {
   border-radius: 15px;
   display: flex;
   align-items: center;
-  max-width: 350px;
+  max-width: 500px;
 }
 
 .log-card p.date {
@@ -238,6 +238,12 @@ a.button p {
   }
 }
 
+@media only screen and (max-width: 750px) {
+  .log-list .featured {
+    max-width: none;
+  }
+}
+
 /* LOG-CONT */
 .log-details {
   display: flex;
@@ -251,6 +257,13 @@ a.button p {
 .log-details .date {
   margin: 0 5px;
   font-size: 1.1rem;
+}
+
+.log-link{
+  margin: 10px 0;
+  background-color: #F0F0F0;
+  padding: 10px 20px;
+  display: inline-block;
 }
 
 .log-content .richtext p {

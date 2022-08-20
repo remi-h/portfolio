@@ -3,6 +3,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { BLOCKS, INLINES } from "@contentful/rich-text-types"
 import Skeleton from '../../components/Skeleton'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -66,19 +67,26 @@ const renderOptions = {
   },
 };
 
-export default function log({ log, tagList }) {
+export default function log({ log }) {
   if (!log) return <Skeleton />
-  const { title, date, icon, tag, text } = log.fields
+  const { title, date, summary, icon, tag, link, text } = log.fields
   return (
     <div className="log-content">
       <h1>{title}</h1>
-      <div className='log-details'>
-        <Image src={'https:' + icon.fields.file.url} width={100} height={100} objectFit="contain" />
-        <div>
-          <p className='date'>{date}</p>
-          <div className='tag'>
-            {documentToReactComponents(tag, renderOptions)}
+      <div>
+        <div className='log-details'>
+          <Image src={'https:' + icon.fields.file.url} width={100} height={80} objectFit="contain" />
+          <div>
+            <p className='date'>{date}</p>
+            <div className='log-link'>
+              <Link href={link}>
+                <a target="_blank">{link}</a>
+              </Link>
+            </div>
           </div>
+        </div>
+        <div className='tag'>
+          {documentToReactComponents(tag, renderOptions)}
         </div>
       </div>
       <div className='richtext'>
