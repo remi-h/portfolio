@@ -72,18 +72,24 @@ export default function log({ log }) {
   const { title, date, summary, icon, tag, link, text } = log.fields
   return (
     <div className="log-content">
-      <h1>{title}</h1>
-      <div>
-        <div className='log-details'>
-          <Image src={'https:' + icon.fields.file.url} width={100} height={80} objectFit="contain" />
-          <div>
-            <p className='date'>{date}</p>
-            <div className='log-link'>
-              <Link href={link}>
-                <a target="_blank">{link}</a>
-              </Link>
-            </div>
-          </div>
+      <div className='log-details'>
+        <Image src={'https:' + icon.fields.file.url} width={100} height={80} objectFit="contain" />
+        <h1>{title}</h1>
+      </div>
+      <div className='log-released'>
+        <div>
+          <span className='details'>Date</span><span>{date}</span>
+        </div>
+        <div>
+          <span className='details'>Released</span>
+          <Link href={link}>
+            <a target="_blank">{link}</a>
+          </Link>
+          <img className="external" src="../images/external-link.svg"/>
+        </div>
+        <hr />
+        <div>
+          {summary}
         </div>
         <div className='tag'>
           {documentToReactComponents(tag, renderOptions)}

@@ -245,25 +245,47 @@ a.button p {
 }
 
 /* LOG-CONT */
+.log-content h1{
+  display: inline-block;
+  font-size: 2.3rem;
+}
 .log-details {
   display: flex;
   align-items: center;
 }
 
-.log-details div {
+.log-released{
+  background-color: #f9f9f9;
+  padding: 10px 20px;
+  margin: 25px 0;
+  border-radius: 5px;
+  font-size: 1.3rem;
+}
+
+.log-released a{
+  color: #888
+}
+
+.log-released a:hover{
+  color: #000
+}
+
+.external{
+  width: 14px;
+  height: 14px;
+  position: relative;
+  top: 3px;
+  left: 5px;
+}
+.log-released .details{
+  font-size: 1rem;
+  color: #333;
+  display: inline-block;
+  width: 80px;
   margin: 0;
 }
-
-.log-details .date {
-  margin: 0 5px;
-  font-size: 1.1rem;
-}
-
-.log-link{
-  margin: 10px 0;
-  background-color: #F0F0F0;
-  padding: 10px 20px;
-  display: inline-block;
+.log-released div {
+  margin: 10px;
 }
 
 .log-content .richtext p {
