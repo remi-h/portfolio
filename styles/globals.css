@@ -309,6 +309,27 @@ a.button p {
   margin: 5px;
 }
 
+.log-rich img{
+  max-width: 700px!important;
+  margin: 14px auto!important;
+  border-radius: 10px!important;
+}
+.log-rich h2{
+  margin-top: 30px;
+}
+.log-rich span{
+  display: block!important;
+}
+.log-rich blockquote{
+  background-color: #f3f3f3;
+  padding: 20px 30px;
+  border-left: 4px solid #777;
+}
+.log-rich blockquote p, .log-rich blockquote a{
+  font-size: 0.9rem!important;
+  color: #000;
+}
+
 /* FOOTER */
 
 footer {

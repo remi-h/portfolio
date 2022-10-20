@@ -95,7 +95,7 @@ export default function log({ log }) {
           {documentToReactComponents(tag, renderOptions)}
         </div>
       </div>
-      <div className='richtext'>
+      <div className='richtext log-rich'>
         {documentToReactComponents(text, renderOptions)}
       </div>
     </div>

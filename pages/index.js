@@ -20,7 +20,6 @@ export default function home({ introEdit, log }) {
   return (
     <div className="wrapper">
       <section className='intro'>
-        <h1>Hi! I'm Remi Higuchi.</h1>
         {introEdit.map(intro => (
           <Introduction key={intro.sys.id} intro={intro} />
         ))}

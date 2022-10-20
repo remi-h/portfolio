@@ -33,7 +33,7 @@ export default function profile({ resume }) {
                     <Work key={resume.sys.id} resume={resume} />
                 ))}
             </div>
-            <Image src={"/images/profile-pic.jpg"} width={300} height={300} objectFit="cover" />
+            {/* <Image src={"/images/profile-pic.jpg"} width={300} height={300} objectFit="cover" /> */}
         </div>
     )
 }
