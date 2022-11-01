@@ -248,10 +248,17 @@ a.button p {
 .log-content h1{
   display: inline-block;
   font-size: 2.3rem;
+  margin: 0;
 }
 .log-details {
   display: flex;
   align-items: center;
+}
+
+@media only screen and (max-width: 750px) {
+  .log-details {
+    flex-wrap: wrap;
+  }
 }
 
 .log-released{
@@ -310,15 +317,10 @@ a.button p {
 }
 
 .log-rich img{
-  max-width: 700px!important;
-  margin: 14px auto!important;
-  border-radius: 10px!important;
+  border: 1px solid #000 !important;
 }
 .log-rich h2{
   margin-top: 30px;
-}
-.log-rich span{
-  display: block!important;
 }
 .log-rich blockquote{
   background-color: #f3f3f3;
